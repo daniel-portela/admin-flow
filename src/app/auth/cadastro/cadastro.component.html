@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="form-container">
+        <form [formGroup]="formulario">
+            <div class="form-group">
+                <div *ngIf="formulario.get('nome')?.hasError('required') && formulario.get('nome')?.touched">
+                    <p class="alert alert-warning">O campo nome é obrigatório!</p>
+                </div>
+                <div *ngIf="formulario.get('nome')?.hasError('minlength') && formulario.get('nome')?.touched">
+                    <p class="alert alert-warning">O campo nome precisa conter pelo menos 3 caracteres!</p>
+                </div>
+                <input type="text" formControlName="nome" placeholder="Nome" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <div *ngIf="formulario.get('idade')?.hasError('required') && formulario.get('idade')?.touched">
+                    <p class="alert alert-warning">O campo idade é obrigatório!</p>
+                </div>
+                <div *ngIf="formulario.get('idade')?.hasError('min') && formulario.get('idade')?.touched">
+                    <p class="alert alert-warning">O campo idade não aceita números inferiores a 0!</p>
+                </div>
+                <div *ngIf="formulario.get('idade')?.hasError('max') && formulario.get('idade')?.touched">
+                    <p class="alert alert-warning">O campo idade não aceita números superiores a 120!</p>
+                </div>
+                <input type="number" formControlName="idade" placeholder="Idade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <div *ngIf="formulario.get('cidade')?.hasError('required') && formulario.get('cidade')?.touched">
+                    <p class="alert alert-warning">O campo cidade é obrigatório!</p>
+                </div>
+                <div *ngIf="formulario.get('cidade')?.hasError('minlength') && formulario.get('cidade')?.touched">
+                    <p class="alert alert-warning">O campo cidade precisa conter pelo menos 3 caracteres!</p>
+                </div>
+                <input type="text" formControlName="cidade" placeholder="Cidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <div *ngIf="btnCadastrar">
+                    <input type="button" value="Cadastrar" (click)="cadastrar()" class="btn btn-primary"
+                        [disabled]="formulario.invalid">
+                </div>
+                <div *ngIf="!btnCadastrar">
+                    <input type="button" value="Alterar" (click)="alterar()" class="btn btn-secondary custom-btn"
+                        [disabled]="formulario.invalid" style="margin-right: 10px;">
+                    <input type="button" value="Remover" (click)="remover()" class="btn btn-danger custom-btn"
+                        style="margin-right: 10px;">
+                    <input type="button" value="Cancelar" (click)="cancelar()" class="btn btn-warning custom-btn">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <table class="table" style="background-color: #f9f9f9;">
+        <tbody>
+            <tr *ngFor="let v of vetor; index as indice">
+                <td colspan="4" class="text-center">
+                    <div class="campo-adicional">
+                        <p><strong>Usuário Cadastrado:</strong> {{indice + 1}}</p>
+                        <p><strong>Nome:</strong> {{v.nome}}</p>
+                        <p><strong>Idade:</strong> {{v.idade}}</p>
+                        <p><strong>Cidade:</strong> {{v.cidade}}</p>
+                        <button class="btn btn-primary pl-3" (click)="selecionar(indice)">Selecionar</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

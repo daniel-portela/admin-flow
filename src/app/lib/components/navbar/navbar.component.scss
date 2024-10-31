@@ -1,0 +1,48 @@
+.icono-segurança {
+  font-size: 1.8rem;
+  margin-right: 0.4rem;
+  color: #0b0042;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+
+.navbar {
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(175, 175, 175, 0.238);
+}
+
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 4px 8px rgba(161, 161, 161, 0.2);
+  background-color: #fff;
+  border-radius: 0.25rem;
+}
+
+.dropdown-item {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: transparent;
+  color: #0e0089;
+  transform: translateY(-1px);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #a5a5a5;
+  box-shadow: none;
+}
+
+.btn-outline-secondary {
+  border: 1px solid #dcdcdc;
+  transition: background-color 0.4s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #001845;
+}

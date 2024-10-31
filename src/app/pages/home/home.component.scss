@@ -1,0 +1,53 @@
+@keyframes colorChange {
+  0% {
+    color: #000;
+  }
+  50% {
+    color: #0900ab;
+  }
+  100% {
+    color: #000;
+  }
+}
+
+.animated-text {
+  animation: colorChange 2s infinite;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.border-blue {
+  color: #000;
+  border: 1px solid #171eec63;
+  background-color: transparent;
+}
+
+.border-light {
+  color: #000;
+  border: 2px solid rgba(173, 216, 230, 0.5);
+  background-color: transparent;
+}
+
+.border-blue:hover {
+  background-color: #3940ff;
+  color: white;
+  border: 1px solid #3940ff;
+}
+
+.border-light:hover {
+  background-color: rgba(173, 216, 230, 0.1);
+}
+
+@media (max-width: 576px) {
+  .custom-spacing {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
