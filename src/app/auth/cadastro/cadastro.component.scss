@@ -1,62 +1,94 @@
-// Estilos do SCSS
-$form-bg: #f8f9fa;
-$table-bg: #e9ecef;
-
-.form-container {
-    width: 600px;
-    height: auto;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: $form-bg;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
-    @media (max-width: 576px) {
-        width: 90%;
-        margin: 20px auto;
-        margin-top: 100px;
-    }
+.cadastro-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-input {
-    margin-bottom: 10px;
-
-    &[type="button"] {
-        margin-right: 10px; // Adiciona um espaçamento entre os botões
-    }
+@media (max-width: 576px) {
+  .cadastro-container {
+    min-height: 140vh;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 
-.table {
-    width: 600px;
-    margin: 20px auto;
-    background-color: $form-bg;
-    border-collapse: collapse;
-    border-radius: 8px;
-    overflow: hidden;
-
-    th,
-    td {
-        padding: 12px;
-        text-align: left;
-    }
-
-    th {
-        background-color: $table-bg;
-    }
-
-    @media (max-width: 576px) {
-        width: 90%;
-        margin: 20px auto;
-        margin-top: 20px;
-    }
+.main-box {
+  width: 100%;
+  max-width: 900px;
 }
 
-.campo-adicional {
-    width: 100%;
-    background-color: #ffffff;
-    padding: 15px;
-    margin: 0 auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    text-align: left;
+.cadastro-box {
+  width: 100%;
+  max-width: 560px;
+  padding: 2rem;
+}
+
+.cadastro-options-box {
+  padding: 2rem;
+}
+
+.btn-cadastro {
+  width: 48%;
+  background-color: rgb(25, 1, 78);
+  color: aliceblue;
+  transition: background-color 0.4s;
+}
+
+.btn-cadastro:hover {
+  background-color: rgb(13, 0, 129);
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .cadastro-box {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cadastro-box {
+    width: 90%;
+  }
+  .cadastro-options-box {
+    width: 88%;
+  }
+}
+
+@keyframes BotaoGoogleAnimacao {
+  0% {
+    background-color: #4286f424;
+  }
+  25% {
+    background-color: #34a85316;
+  }
+  50% {
+    background-color: #fbbd0529;
+  }
+  75% {
+    background-color: #db453726;
+  }
+  100% {
+    background-color: #4286f41b;
+  }
+}
+
+.btn-google {
+  background-color: #4285f4;
+  color: rgb(0, 8, 71);
+  border: none;
+  padding: 0.7rem;
+  transition: background-color 0.5s ease;
+  animation: BotaoGoogleAnimacao 5s infinite alternate;
+}
+
+.btn-google:hover {
+  background-color: #1a73e8;
 }

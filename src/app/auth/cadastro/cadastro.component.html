@@ -1,68 +1,53 @@
-<div class="container-fluid">
-    <div class="form-container">
-        <form [formGroup]="formulario">
-            <div class="form-group">
-                <div *ngIf="formulario.get('nome')?.hasError('required') && formulario.get('nome')?.touched">
-                    <p class="alert alert-warning">O campo nome é obrigatório!</p>
-                </div>
-                <div *ngIf="formulario.get('nome')?.hasError('minlength') && formulario.get('nome')?.touched">
-                    <p class="alert alert-warning">O campo nome precisa conter pelo menos 3 caracteres!</p>
-                </div>
-                <input type="text" formControlName="nome" placeholder="Nome" class="form-control">
-            </div>
-
-            <div class="form-group">
-                <div *ngIf="formulario.get('idade')?.hasError('required') && formulario.get('idade')?.touched">
-                    <p class="alert alert-warning">O campo idade é obrigatório!</p>
-                </div>
-                <div *ngIf="formulario.get('idade')?.hasError('min') && formulario.get('idade')?.touched">
-                    <p class="alert alert-warning">O campo idade não aceita números inferiores a 0!</p>
-                </div>
-                <div *ngIf="formulario.get('idade')?.hasError('max') && formulario.get('idade')?.touched">
-                    <p class="alert alert-warning">O campo idade não aceita números superiores a 120!</p>
-                </div>
-                <input type="number" formControlName="idade" placeholder="Idade" class="form-control">
-            </div>
-
-            <div class="form-group">
-                <div *ngIf="formulario.get('cidade')?.hasError('required') && formulario.get('cidade')?.touched">
-                    <p class="alert alert-warning">O campo cidade é obrigatório!</p>
-                </div>
-                <div *ngIf="formulario.get('cidade')?.hasError('minlength') && formulario.get('cidade')?.touched">
-                    <p class="alert alert-warning">O campo cidade precisa conter pelo menos 3 caracteres!</p>
-                </div>
-                <input type="text" formControlName="cidade" placeholder="Cidade" class="form-control">
-            </div>
-
-            <div class="form-group">
-                <div *ngIf="btnCadastrar">
-                    <input type="button" value="Cadastrar" (click)="cadastrar()" class="btn btn-primary"
-                        [disabled]="formulario.invalid">
-                </div>
-                <div *ngIf="!btnCadastrar">
-                    <input type="button" value="Alterar" (click)="alterar()" class="btn btn-secondary custom-btn"
-                        [disabled]="formulario.invalid" style="margin-right: 10px;">
-                    <input type="button" value="Remover" (click)="remover()" class="btn btn-danger custom-btn"
-                        style="margin-right: 10px;">
-                    <input type="button" value="Cancelar" (click)="cancelar()" class="btn btn-warning custom-btn">
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <table class="table" style="background-color: #f9f9f9;">
-        <tbody>
-            <tr *ngFor="let v of vetor; index as indice">
-                <td colspan="4" class="text-center">
-                    <div class="campo-adicional">
-                        <p><strong>Usuário Cadastrado:</strong> {{indice + 1}}</p>
-                        <p><strong>Nome:</strong> {{v.nome}}</p>
-                        <p><strong>Idade:</strong> {{v.idade}}</p>
-                        <p><strong>Cidade:</strong> {{v.cidade}}</p>
-                        <button class="btn btn-primary pl-3" (click)="selecionar(indice)">Selecionar</button>
+<div class="cadastro-container w-100 d-flex align-items-center justify-content-center vh-100">
+    <div class="main-box d-flex flex-row flex-wrap justify-content-center align-items-start">
+        <div class="cadastro-box p-5 shadow rounded me-md-3 mb-3">
+            <h2 class="text-start mb-4">Cadastro</h2>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="firstName" class="form-label"><i class="fas fa-user"></i> Nome</label>
+                            <input type="text" id="firstName" class="form-control" placeholder="Digite seu nome"
+                                required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="lastName" class="form-label"><i class="fas fa-user"></i> Sobrenome</label>
+                            <input type="text" id="lastName" class="form-control" placeholder="Digite seu sobrenome"
+                                required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email" class="form-label"><i class="fas fa-envelope"></i> E-mail</label>
+                            <input type="email" id="email" class="form-control" placeholder="Digite seu e-mail"
+                                required>
+                        </div>
                     </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="age" class="form-label"><i class="fas fa-calendar-alt"></i> Idade</label>
+                            <input type="number" id="age" class="form-control" placeholder="Digite sua idade" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="city" class="form-label"><i class="fas fa-map-marker-alt"></i> Cidade</label>
+                            <input type="text" id="city" class="form-control" placeholder="Digite sua cidade" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="profession" class="form-label"><i class="fas fa-briefcase"></i>
+                                Profissão</label>
+                            <input type="text" id="profession" class="form-control" placeholder="Digite sua profissão"
+                                required>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-cadastro">Cadastrar</button>
+            </form>
+        </div>
+        <div class="cadastro-options-box p-4 shadow rounded mb-3">
+            <div class="text-center mb-3">
+                Já tem uma conta? <a routerLink="/" class="forgot-password-link">Entrar</a>
+            </div>
+            <button class="btn btn-google w-100 d-flex align-items-center justify-content-center">
+                <i class="fab fa-google me-2"></i> Entrar com o Google
+            </button>
+        </div>
+    </div>
 </div>
