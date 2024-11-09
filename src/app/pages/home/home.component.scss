@@ -19,26 +19,31 @@ h1 {
   font-size: 3rem;
 }
 
-.border-blue {
-  color: #000;
-  border: 1px solid #171eec63;
-  background-color: transparent;
+.btn-login {
+  background-color: rgb(25, 1, 78);
+  color: aliceblue;
+
+  &:hover {
+    background-color: rgb(13, 0, 129);
+    transition: 0.4s;
+  }
+
+  width: 30%;
 }
 
-.border-light {
+.btn-secondary {
   color: #000;
   border: 2px solid rgba(173, 216, 230, 0.5);
   background-color: transparent;
+
+  &:hover {
+    background-color: rgba(173, 216, 230, 0.1);
+  }
 }
 
-.border-blue:hover {
-  background-color: #3940ff;
-  color: white;
-  border: 1px solid #3940ff;
-}
-
-.border-light:hover {
-  background-color: rgba(173, 216, 230, 0.1);
+.custom-spacing {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 @media (max-width: 576px) {
@@ -49,5 +54,9 @@ h1 {
 
   h1 {
     font-size: 2rem;
+  }
+
+  .btn-login {
+    width: 50%;
   }
 }

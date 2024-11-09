@@ -8,14 +8,15 @@
                 plataforma simplificada. Facilite o controle e tenha todas as informações em um só lugar.
             </p>
             <div class="d-flex justify-content-start">
-                <button class="btn btn-primary me-2 border-blue">Entrar</button>
-                <button class="btn btn-secondary border-light">Cadastrar</button>
+                <button class="btn btn-login me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Entrar</button>
+                <a class="btn btn-secondary border-light" routerLink="/auth/cadastro">Cadastrar</a>
             </div>
         </article>
-
         <figure class="col-md-5 text-center">
             <img src="assets/img/banner-principal.jpg" class="img-fluid rounded shadow" alt="Imagem de boas-vindas">
             <figcaption class="sr-only">Imagem de boas-vindas ao Admin Flow</figcaption>
         </figure>
     </div>
 </section>
+
+<app-abrir-modal></app-abrir-modal>

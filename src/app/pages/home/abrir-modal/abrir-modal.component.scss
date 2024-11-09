@@ -1,0 +1,40 @@
+.modal-narrow {
+  max-width: 450px;
+  margin: auto;
+
+  @media (max-width: 576px) {
+    max-width: 330px;
+    margin: auto;
+  }
+}
+
+.btn-login {
+  background-color: rgb(25, 1, 78);
+  color: aliceblue;
+
+  &:hover {
+    background-color: rgb(13, 0, 129);
+    transition: 0.4s;
+  }
+}
+
+input[type="email"],
+input[type="password"] {
+  border: 1px solid #eae9e9;
+  box-shadow: none;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgb(219, 237, 255);
+  }
+}
+
+.recuperar-link {
+  text-decoration: none;
+}
+
+.modal-header .btn-close {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
