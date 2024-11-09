@@ -1,7 +1,11 @@
 .icono-segurança {
   font-size: 1.8rem;
   margin-right: 0.4rem;
+  margin-left: 5.2rem;
   color: #0b0042;
+  @media (max-width: 576px) {
+    margin-left: 0;
+  }
 }
 
 .navbar-brand {
@@ -45,4 +49,8 @@
 
 .btn-outline-secondary:hover {
   background-color: #001845;
+}
+
+form {
+  margin-right: 5.2rem;
 }
