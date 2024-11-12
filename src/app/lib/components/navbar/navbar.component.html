@@ -1,37 +1,37 @@
-<nav class="navbar navbar-expand-lg bg-body px-3" aria-label="Navegação principal">
+<nav class="navbar navbar-expand-lg bg-body px-3 fixed-top" aria-label="Navegação principal">
     <div class="container-fluid">
         <a class="navbar-brand" routerLink="/">
             <i class="fas fa-shield-alt icono-segurança" aria-hidden="true"></i>
             Admin Flow
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" (click)="toggleMenu()"
+            [attr.aria-expanded]="isMenuOpen ? 'true' : 'false'" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" [ngClass]="{ show: isMenuOpen }" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/" routerLinkActive="active" aria-current="page">Início</a>
+                    <a class="nav-link" routerLink="/" routerLinkActive="active" aria-current="page"
+                        (click)="closeMenu()">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/relatorios" routerLinkActive="active">Relatórios</a>
+                    <a class="nav-link" routerLink="/relatorios" routerLinkActive="active"
+                        (click)="closeMenu()">Relatórios</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Usuários
-                    </a>
+                        aria-expanded="false">Usuários</a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" routerLink="/auth/cadastrar-usuario"
-                                routerLinkActive="active">Adicionar novo</a>
+                            <a class="dropdown-item" routerLink="/auth/cadastrar-usuario" routerLinkActive="active"
+                                (click)="closeMenu()">Adicionar novo</a>
                         </li>
                     </ul>
                 </li>
             </ul>
             <form class="d-flex" role="search" aria-label="Pesquisar usuários">
                 <input class="form-control me-2" type="search" placeholder="Pesquisar usuários"
-                    aria-label="Pesquisar usuários">
+                    aria-label="Pesquisar usuários" />
                 <button class="btn btn-outline-secondary" type="submit">Buscar</button>
             </form>
         </div>
