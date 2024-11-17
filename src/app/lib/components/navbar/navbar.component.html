@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body px-3 fixed-top" aria-label="Navegação principal">
+<nav class="navbar navbar-expand-lg bg-body fixed-top" aria-label="Navegação principal">
     <div class="container-fluid">
         <a class="navbar-brand" routerLink="/">
             <i class="fas fa-shield-alt icono-segurança" aria-hidden="true"></i>
@@ -9,7 +9,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" [ngClass]="{ show: isMenuOpen }" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav px-3 me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/" routerLinkActive="active" aria-current="page"
                         (click)="closeMenu()">Início</a>
@@ -29,7 +29,7 @@
                     </ul>
                 </li>
             </ul>
-            <form class="d-flex" role="search" aria-label="Pesquisar usuários">
+            <form class="d-flex space" role="search" aria-label="Pesquisar usuários">
                 <input class="form-control me-2" type="search" placeholder="Pesquisar usuários"
                     aria-label="Pesquisar usuários" />
                 <button class="btn btn-outline-secondary" type="submit">Buscar</button>
