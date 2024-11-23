@@ -10,12 +10,40 @@
 
 .btn-login {
   background-color: rgb(25, 1, 78);
-  color: aliceblue;
+  color: rgb(255, 255, 255);
 
   &:hover {
+    color: rgb(255, 255, 255);
     background-color: rgb(13, 0, 129);
     transition: 0.4s;
   }
+}
+
+@keyframes BotaoGoogleAnimacao {
+  0% {
+    background-color: #4286f424;
+  }
+  25% {
+    background-color: #34a85316;
+  }
+  50% {
+    background-color: #fbbd0529;
+  }
+  75% {
+    background-color: #db453726;
+  }
+  100% {
+    background-color: #4286f41b;
+  }
+}
+
+.btn-google {
+  background-color: #4285f4;
+  color: rgb(0, 8, 71);
+  border: none;
+  padding: 0.7rem;
+  transition: background-color 0.5s ease;
+  animation: BotaoGoogleAnimacao 5s infinite alternate;
 }
 
 input[type="email"],
@@ -25,7 +53,7 @@ input[type="password"] {
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgb(219, 237, 255);
+    box-shadow: 0 0 0 1px rgba(219, 237, 255, 0.563);
   }
 }
 

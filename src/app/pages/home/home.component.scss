@@ -24,6 +24,7 @@ h1 {
   color: aliceblue;
 
   &:hover {
+    color: rgb(255, 255, 255);
     background-color: rgb(13, 0, 129);
     transition: 0.4s;
   }
@@ -31,7 +32,7 @@ h1 {
   width: 30%;
 }
 
-.btn-secondary {
+.btn-cadastrar {
   color: #000;
   border: 2px solid rgba(173, 216, 230, 0.5);
   background-color: transparent;

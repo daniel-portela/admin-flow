@@ -34,11 +34,12 @@
 .btn-cadastro {
   width: 48%;
   background-color: rgb(25, 1, 78);
-  color: aliceblue;
+  color: rgb(255, 255, 255);
   transition: background-color 0.4s;
 }
 
 .btn-cadastro:hover {
+  color: white;
   background-color: rgb(13, 0, 129);
 }
 
@@ -91,4 +92,12 @@ a {
 
 .btn-google:hover {
   background-color: #1a73e8;
+}
+
+input:focus, 
+textarea:focus, 
+select:focus {
+  outline: none; /* Remove o contorno padrão */
+  border: 1px solid rgba(25, 1, 78, 0.275);
+  box-shadow: none; /* Remove a sombra se estiver presente */
 }

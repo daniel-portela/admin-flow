@@ -2,39 +2,77 @@
     <div class="main-box d-flex flex-row flex-wrap justify-content-center align-items-start">
         <div class="cadastro-box p-5 shadow rounded me-md-3 mb-3">
             <h2 class="text-start mb-4">Cadastro</h2>
-            <form>
+            <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label for="firstName" class="form-label"><i class="fas fa-user"></i> Nome</label>
-                            <input type="text" id="firstName" class="form-control" placeholder="Digite seu nome"
-                                required>
+                            <input type="text" id="firstName" class="form-control" formControlName="firstName"
+                                placeholder="Digite seu nome" />
+                            <small *ngIf="submitted && cadastroForm.controls['firstName'].hasError('required')"
+                                class="text-danger">
+                                Nome é obrigatório!
+                            </small>
+                            <small *ngIf="cadastroForm.controls['firstName'].hasError('minlength')" class="text-danger">
+                                Mínimo de 3 caracteres!
+                            </small>
                         </div>
                         <div class="form-group mb-3">
                             <label for="lastName" class="form-label"><i class="fas fa-user"></i> Sobrenome</label>
-                            <input type="text" id="lastName" class="form-control" placeholder="Digite seu sobrenome"
-                                required>
+                            <input type="text" id="lastName" class="form-control" formControlName="lastName"
+                                placeholder="Digite seu sobrenome" />
+                            <small *ngIf="submitted && cadastroForm.controls['lastName'].hasError('required')"
+                                class="text-danger">
+                                Sobrenome é obrigatório!
+                            </small>
+                            <small *ngIf="cadastroForm.controls['lastName'].hasError('minlength')" class="text-danger">
+                                Mínimo de 3 caracteres!
+                            </small>
                         </div>
                         <div class="form-group mb-3">
                             <label for="email" class="form-label"><i class="fas fa-envelope"></i> E-mail</label>
-                            <input type="email" id="email" class="form-control" placeholder="Digite seu e-mail"
-                                required>
+                            <input type="email" id="email" class="form-control" formControlName="email"
+                                placeholder="Digite seu e-mail" />
+                            <small *ngIf="submitted && cadastroForm.controls['email'].hasError('required')"
+                                class="text-danger">
+                                E-mail é obrigatório!
+                            </small>
+                            <small *ngIf="cadastroForm.controls['email'].hasError('email')" class="text-danger">
+                                Formato de e-mail inválido!
+                            </small>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label for="age" class="form-label"><i class="fas fa-calendar-alt"></i> Idade</label>
-                            <input type="number" id="age" class="form-control" placeholder="Digite sua idade" required>
+                            <input type="number" id="age" class="form-control" formControlName="age"
+                                placeholder="Digite sua idade" />
+                            <small *ngIf="submitted && cadastroForm.controls['age'].hasError('required')"
+                                class="text-danger">
+                                Idade é obrigatória!
+                            </small>
+                            <small *ngIf="cadastroForm.controls['age'].hasError('min')" class="text-danger">
+                                Idade deve ser maior que 18!
+                            </small>
                         </div>
                         <div class="form-group mb-3">
                             <label for="city" class="form-label"><i class="fas fa-map-marker-alt"></i> Cidade</label>
-                            <input type="text" id="city" class="form-control" placeholder="Digite sua cidade" required>
+                            <input type="text" id="city" class="form-control" formControlName="city"
+                                placeholder="Digite sua cidade" />
+                            <small *ngIf="submitted && cadastroForm.controls['city'].hasError('required')"
+                                class="text-danger">
+                                Cidade é obrigatória!
+                            </small>
                         </div>
                         <div class="form-group mb-3">
                             <label for="profession" class="form-label"><i class="fas fa-briefcase"></i>
                                 Profissão</label>
-                            <input type="text" id="profession" class="form-control" placeholder="Digite sua profissão"
-                                required>
+                            <input type="text" id="profession" class="form-control" formControlName="profession"
+                                placeholder="Digite sua profissão" />
+                            <small *ngIf="submitted && cadastroForm.controls['profession'].hasError('required')"
+                                class="text-danger">
+                                Profissão é obrigatória!
+                            </small>
                         </div>
                     </div>
                 </div>
