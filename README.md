@@ -1,27 +1,43 @@
-# GerenciarUsers
+# Admin Flow - Gerenciamento de Usuários
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+**Admin Flow** é um sistema de gerenciamento de usuários e controle administrativo, desenvolvido em **Angular 18+** com **TypeScript**, **Bootstrap** e **SCSS**. O projeto utiliza uma estrutura modular, validação de formulários reativos e um layout responsivo.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### 🌐 Demonstração ao vivo
+Acesse a aplicação: [admin-flow.vercel.app](https://admin-flow.vercel.app)
 
-## Code scaffolding
+### 📚 Descrição Geral
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Este projeto foi criado com foco no aprendizado e na aplicação de boas práticas de desenvolvimento em Angular, com organização de código, separação de responsabilidades e uso de componentes reutilizáveis.<hr>
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 🛠️ Tecnologias Utilizadas
+- **Angular 18+**
+- **TypeScript**
+- **Bootstrap**
+- **SCSS**
+- **HTML Semântico**<hr>
 
-## Running unit tests
+### 🚀 Funcionalidades
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  - Implementação de `FormGroup` e `validação avançada`.
+  - `Navbar` e `Footer` organizados em uma estrutura modular.
+  - `Layout ajustado` para diferentes dispositivos e tamanhos de tela.
 
-## Running end-to-end tests
+  - `Cadastro` e `manipulação de dados` simulados.<hr><br>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 📝 Licença
 
-## Further help
+Este projeto está licenciado sob a [MIT License](LICENSE).<hr>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### ✍️ Notas
+
+O projeto está em constante evolução, e ajustes podem ser feitos para atender às necessidades de aprendizado e desenvolvimento.
+Este README foi criado para documentar as funcionalidades e o propósito do projeto de forma clara e organizada.
+
+### ✉️ <b>Contato:</b>
+
+Se você tiver alguma dúvida, sugestão ou interesse em colaborar, não hesite em me contatar.
+
+Email: <a href="mailto:danielportela.ti@gmail.com"> danielportela.ti@gmail.com</a> 
+
