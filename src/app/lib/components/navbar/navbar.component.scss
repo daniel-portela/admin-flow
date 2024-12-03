@@ -82,31 +82,17 @@
   transform: translateY(-1px);
 }
 
-.form-control {
-  border: 1px solid rgba(193, 193, 193, 0.31);
-}
+.icons-container {
+  display: flex;
+  align-items: center;
 
-.form-control:focus {
-  outline: none;
-  border-color: #00013849;
-  box-shadow: none;
-}
+  i {
+    cursor: pointer;
+    margin-left: 1rem;
+    font-size: 1.5rem;
 
-.btn-outline-secondary {
-  background-color: #001845;
-  color: #fff;
-  transition: background-color 0.4s ease;
-}
-
-.btn-outline-secondary:hover {
-  background-color: #002871;
-}
-
-form {
-  margin-right: 5.2rem;
-}
-
-.space {
-  padding-right: 1rem;
-  padding-left: 1rem;
+    &:last-child {
+      margin-right: 6.2rem;
+    }
+  }
 }
