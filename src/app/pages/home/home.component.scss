@@ -62,3 +62,23 @@ h1 {
     width: 50%;
   }
 }
+
+/* Efeito de hover suave nos cards */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Leve elevação no hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais forte */
+}
+
+.service-card .btn {
+    margin-top: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.service-card .btn:hover {
+    background-color: #0056b3; /* Cor de hover mais escura */
+}
