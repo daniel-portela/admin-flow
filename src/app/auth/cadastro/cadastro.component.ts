@@ -1,11 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -18,6 +13,9 @@ import { RouterLink } from '@angular/router';
 export class CadastroComponent {
   cadastroForm: FormGroup;
   submitted = false;
+  cepSuccess: boolean | undefined;
+  cepError: boolean | undefined;
+  http: any;
 
   constructor(private fb: FormBuilder) {
     this.cadastroForm = this.fb.group({
@@ -27,7 +25,30 @@ export class CadastroComponent {
       age: ['', [Validators.required, Validators.min(18)]],
       city: ['', Validators.required],
       profession: ['', Validators.required],
+      cep: ['', [Validators.required, Validators.maxLength(8)]],
     });
+  }
+
+  checkCep() {
+    const cep = this.cadastroForm.controls['cep'].value;
+    if (cep && cep.length === 8) {
+      this.http.get(`https://viacep.com.br/ws/${cep}/json/`).subscribe(
+        (data: any) => {
+          if (data.erro) {
+            this.cepError = true;
+            this.cepSuccess = false;
+          } else {
+            this.cepError = false;
+            this.cepSuccess = true;
+            this.cadastroForm.controls['city'].setValue(data.localidade);
+          }
+        },
+        () => {
+          this.cepError = true;
+          this.cepSuccess = false;
+        }
+      );
+    }
   }
 
   onSubmit() {

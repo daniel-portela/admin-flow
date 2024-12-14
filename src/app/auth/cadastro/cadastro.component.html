@@ -41,6 +41,24 @@
                                 Formato de e-mail inválido!
                             </small>
                         </div>
+                        <div class="form-group mb-3">
+                            <label for="cep" class="form-label"><i class="fas fa-map-marker-alt"></i> CEP</label>
+                            <input type="text" id="cep" class="form-control" formControlName="cep"
+                                placeholder="Digite seu CEP" (blur)="checkCep()" />
+                            <small *ngIf="submitted && cadastroForm.controls['cep'].hasError('required')"
+                                class="text-danger">
+                                CEP é obrigatório!
+                            </small>
+                            <small *ngIf="cadastroForm.controls['cep'].hasError('maxlength')" class="text-danger">
+                                O CEP deve ter 8 dígitos!
+                            </small>
+                            <small *ngIf="cepError" class="text-danger">
+                                CEP não encontrado!
+                            </small>
+                            <small *ngIf="cepSuccess" class="text-success">
+                                CEP encontrado com sucesso!
+                            </small>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group mb-3">
