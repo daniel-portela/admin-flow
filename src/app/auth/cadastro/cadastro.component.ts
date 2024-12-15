@@ -1,7 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CepService } from '../services/cep.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -15,9 +17,8 @@ export class CadastroComponent {
   submitted = false;
   cepSuccess: boolean | undefined;
   cepError: boolean | undefined;
-  http: any;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private cepService: CepService) {
     this.cadastroForm = this.fb.group({
       firstName: ['', [Validators.required, Validators.minLength(3)]],
       lastName: ['', [Validators.required, Validators.minLength(3)]],
@@ -32,8 +33,8 @@ export class CadastroComponent {
   checkCep() {
     const cep = this.cadastroForm.controls['cep'].value;
     if (cep && cep.length === 8) {
-      this.http.get(`https://viacep.com.br/ws/${cep}/json/`).subscribe(
-        (data: any) => {
+      this.cepService.buscarCep(cep).subscribe(
+        (data) => {
           if (data.erro) {
             this.cepError = true;
             this.cepSuccess = false;
