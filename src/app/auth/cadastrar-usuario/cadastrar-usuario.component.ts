@@ -31,6 +31,10 @@ export class CadastrarUsuarioComponent {
         Validators.required,
         Validators.minLength(3),
       ]),
+      cep: new FormControl<string | null>(null, [
+        Validators.required,
+        Validators.pattern('^[0-9]{5}-?[0-9]{3}$'),
+      ]),
     });
   }
 
@@ -39,6 +43,7 @@ export class CadastrarUsuarioComponent {
       nome: this.formulario.value.nome || '',
       idade: this.formulario.value.idade || 0,
       cidade: this.formulario.value.cidade || '',
+      cep: this.formulario.value.cep || '',
     };
   }
 
@@ -56,6 +61,7 @@ export class CadastrarUsuarioComponent {
       nome: pessoaSelecionada.nome || '',
       idade: pessoaSelecionada.idade || null,
       cidade: pessoaSelecionada.cidade || '',
+      cep: pessoaSelecionada.cep || '',
     });
     this.btnCadastrar = false;
   }
